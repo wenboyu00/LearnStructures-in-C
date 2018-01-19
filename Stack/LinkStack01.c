@@ -14,9 +14,9 @@ Stack CreateStack(){
 /*是否为空*/
 Status IsEmpty(Stack S){
 	int i = (S->next == NULL);
-	if(i){
-		printf("\n栈已空\n"); 
-	}
+//	if(i){
+//		printf("\n栈已空\n"); 
+//	}
 	return (S->next == NULL);
 }
 

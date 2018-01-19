@@ -11,7 +11,9 @@ void main(){
 	/*测试非递归遍历*/
 	printf("先序遍历：");
     StackPreOrderTraverse(T); 
-    printf("中序遍历：");
-    StackInOrderTraverse(T); 
+    printf("\n中序遍历：");
+    StackInOrderTraverse(T);
+	printf("\n后序遍历：");
+    StackPostOrderTraverse(T); 
     
 }

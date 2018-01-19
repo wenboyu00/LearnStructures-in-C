@@ -24,4 +24,6 @@ Status CreateBinTree(BinTree *T);
 Status StackPreOrderTraverse(BinTree T);
 /*非递归遍历-中序：栈*/
 Status StackInOrderTraverse(BinTree T);
+/*非递归遍历-后序：栈*/
+Status StackPostOrderTraverse(BinTree T); 
 #endif
