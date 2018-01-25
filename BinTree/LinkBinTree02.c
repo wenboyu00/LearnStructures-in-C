@@ -137,4 +137,56 @@ Status StackPostOrderTraverse(BinTree T){
 栈存储的是上一个结点，子树操作完成后，返回上一个跟结点，然后再进入另一个子树
 
 */
+
+/*后序遍历求树深度（高）*/
+int PostOrderGetHeight(BinTree T){
+	int leftHeight, rightHeight, maxHeight;
+	if(T){
+		leftHeight = PostOrderGetHeight(T->lchild);			//左子树深度 
+		rightHeight = PostOrderGetHeight(T->rchild);		//右子树深度 
+		maxHeight = leftHeight > rightHeight ? leftHeight : rightHeight;
+		return (maxHeight + 1 );	//返回树的深度 
+	} 
+	else
+		return 0;		//空树深度为0 
+}
+
+/*清理二叉树*/
+Status ClearBinTree(BinTree *T){
+	if(*T){									//二叉树不为空 
+		if((*T)->lchild)					//清空左树 
+			ClearBinTree(&(*T)->lchild);
+		if((*T)->rchild)					//清空右树 
+			ClearBinTree(&(*T)->rchild);
+		free(*T);							//释放该结点 		 
+		*T = NULL;							//置空指针 
+	}
+	return OK; 
+} 
+
+/*是否为空*/
+Status BinTreeEmpty(BinTree T){
+	if(!T)
+		return TRUE;
+	else
+		return FALSE;
+}
+
+/*返回Tree的根*/
+TElemType Root(BinTree T){
+	if(BinTreeEmpty(T))
+		return -1;
+	else
+		return T->data;
+}
+
+/*返回指结点的值*/
+TElemType Value(BinTree T){
+	return T->data;
+}
+
+/*给所指p结点赋值为value*/
+void Assign(BinTree T,TElemType value){
+	T->data = value;
+}
 #endif 

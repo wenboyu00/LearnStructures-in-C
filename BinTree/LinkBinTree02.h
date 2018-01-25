@@ -25,5 +25,17 @@ Status StackPreOrderTraverse(BinTree T);
 /*非递归遍历-中序：栈*/
 Status StackInOrderTraverse(BinTree T);
 /*非递归遍历-后序：栈*/
-Status StackPostOrderTraverse(BinTree T); 
+Status StackPostOrderTraverse(BinTree T);
+
+/*清理二叉树*/
+Status ClearBinTree(BinTree *T);
+/*是否为空*/
+Status BinTreeEmpty(BinTree T);
+/*返回Tree的根*/
+TElemType Root(BinTree T);
+/*返回指结点的值*/
+TElemType Value(BinTree T);
+/*给所指p结点赋值为value*/
+void Assign(BinTree T,TElemType value); 
+
 #endif
